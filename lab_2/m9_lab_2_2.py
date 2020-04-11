@@ -1,3 +1,5 @@
+#Для того, чтобы использовать значения по умолчанию,
+#нужно ввести DEF для каждого L и/или R.
 import random
 import sys
 import math as mth
