@@ -55,7 +55,8 @@ def Dictionary(dicty):
     return new_dicty
 
 def from_json(obj):
-    patterns = ['(\{.*\})','(\[.*\])','(\".*?\")','[0-9]*\.[0-9]*|[0-9]+','[a-z]+']
+    patterns = ['(\{.*\})','(\[.*\])','(\".*?\")',\
+                '[0-9]*\.[0-9]*|[0-9]+','[a-z]+']
     funcs = [Dictionary, Array, String, Number, BoolNone]
     for i in range(5):
         objhelp = re.findall(patterns[i],obj)
