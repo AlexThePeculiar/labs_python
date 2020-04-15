@@ -44,9 +44,10 @@ def Array(arr):
 
 def Dictionary(dicty):
     elem = []
+    pattern = '(?<=\{)(.*?|\{.*?\}|\[.*?\]):(\[.*?\]|\{.*?\}|.*?)(?=\,|\})'
     while len(dicty) > 2:
-        elem += re.findall('(?<=\{)(.*?|\{.*?\}|\[.*?\]):(\[.*?\]|\{.*?\}|.*?)(?=\,|\})',dicty)
-        dicty = re.sub('(?<=\{)(.*?|\{.*?\}|\[.*?\]):(\[.*?\]|\{.*?\}|.*?)(?=\,|\})','',dicty)
+        elem += re.findall(pattern,dicty)
+        dicty = re.sub(pattern,'',dicty)
         dicty = re.sub('(?<=\{)(\,\s+|\,)','',dicty)
     new_dicty = {}
     for el in elem:
